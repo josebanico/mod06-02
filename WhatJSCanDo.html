@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What Can JS Can do</title>
+</head>
+<body>
+	<h2>Java Can show or hide elements</h2>
+	<button onclick="hideContent()">Hide all</button>
+	<button onclick="showContent()">Show all</button>
+
+	<section id="sec1">
+		<h2> JavaScript can change HTML Content</h2>
+		<p id="htmlContent"> Change Me!</p>
+		<button onclick="changeContent()">Change Content</button>
+
+	</section>
+	<section id="sec2">
+		<h2>JavaScript Can change HTML attributes</h2>
+		<img id="baymax" src="./assets/image/archers.jpg" >
+		<br>
+		<button onclick="changeHeight()">Change Height</button>
+		<button onclick="changePicture()">Change Picture</button>
+	</section>
+	<section id="sec3">
+		<h2 id="changeCSS">JavaScript Can change CSS Style</h2>
+		<button onclick="changeStyle()">Change Me!</button>
+	</section>
+
+
+
+
+	<script type="text/javascript">
+		const hideContent =()=> {
+			document.getElementById("sec1").style.display="none";
+			document.getElementById("sec2").style.display="none";
+			document.getElementById("sec3").style.display="none";
+		}
+		const showContent =()=> {
+			document.getElementById("sec1").style.display="block";
+			document.getElementById("sec2").style.display="block";
+			document.getElementById("sec3").style.display="block";
+		}
+		const changeContent = () => {
+			document.getElementById("htmlContent").innerHTML = "Hello World";
+
+		}	
+		const changeHeight = () => {
+			document.getElementById("baymax").height = 500;
+
+		}	
+		const changePicture = () => {
+			document.getElementById("baymax").src = "./assets/image/cross.jpg";
+
+		}	
+		const changeStyle = () => {
+			document.getElementById("changeCSS").style.color = "red";
+			document.getElementById("changeCSS").style.fontStyle = "italic";
+
+		}	
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">	
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="./assets/js/bootstrap.js"></script>
+
+	<title>Control Structures 2</title>
+</head>
+<body>
+	<p><input type="number" name="number" id="CP1"> Capstone 1 </p>
+	<p><input type="number" name="number" id="CP2"> Capstone 2 </p>
+	<p> <input type="number" name="number" id="CP3"> Capstone 3</p>
+	<p> <input type="number" name="number" id="Port"> Portfolio </p>
+	<p> <input type="number" name="number" id="Atten"> Attendance</p>
+	<button onclick="computeAve()">COMPUTE GRADE</button>
+
+
+	<span name="answer" id="result"></span></p>
+	<br>
+	<textarea name="averes" id="averes"></textarea>
+	<script type="text/javascript">
+		
+        const computeAve  = () => {
+        	//Getting input
+			let Num1 = Number(document.getElementById('CP1').value);
+			let Num2 = Number(document.getElementById('CP2').value);
+			let Num3 = Number(document.getElementById('CP3').value);
+			let Num4 = Number(document.getElementById('Port').value);
+			let Num5 = Number(document.getElementById('Atten').value);
+			//Process
+			let Rate1  = Num1 * 0.20;
+			let Rate2  = Num2 * 0.30;			
+			let Rate3 = Num3 * 0.40;
+			let Rate4 = Num4 * 0.05; 
+			let Rate5 = Num5 * 0.05;
+			let Grade = Rate1 + Rate2 + Rate3 + Rate4 + Rate5;
+
+			//Output
+			 if (((Num1>100) || (Num1<0)) ||  ((Num2>100) || (Num2<0)) ||  ((Num3>100) || (Num3<0)) || ((Num4>100) || (Num4<0)) || ((Num5>100) || (Num5<0)))   {
+			 	document.getElementById('result').innerHTML = "invalid input";
+			 } else {           
+		
+
+			if ((Grade>=90) && (Grade<=100)) {
+				document.getElementById('averes').innerHTML = "Average Grade is " + Grade + "; Rating is A.";
+			
+				} else if ((Grade>=80) && (Grade<90)) {
+					document.getElementById('averes').innerHTML = "Average Grade is " + Grade + "; Rating is B.";
+		    	} else if ((Grade>=70) && (Grade<80)) {
+					document.getElementById('averes').innerHTML = "Average Grade is " + Grade + "; Rating is C.";
+				} else if ((Grade>=60) && (Grade<70)) {
+					document.getElementById('averes').innerHTML = "Average Grade is " + Grade + "; Rating is D.";
+				} else if ((Grade>=50) && (Grade<60)) {
+					document.getElementById('averes').innerHTML = "Average Grade is " + Grade + "; Rating is E.";
+				} else if (Grade<50) {
+					document.getElementById('averes').innerHTML = "Average Grade is " + Grade + "; Rating is F.";
+		 	}    
+		 	}  
+              
+			}
+			
+	</script>
+
+</body>
+</html>

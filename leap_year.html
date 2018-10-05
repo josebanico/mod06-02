@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" name:"num" id="num">
+	<button onclick="divisible()">Button</button>
+	<span id="result"></span>
+	<script type="text/javascript">
+		const divisible = () =>{
+			let x = Number(document.getElementById('num').value);
+			if ((x%4 == 0)&& (x%400 == 0)){
+				document.getElementById('result').innerHTML = x + " is a leap year";
+			}else if ((x%4 == 0) && (x%100 !=0)) {
+				document.getElementById('result').innerHTML = x + " a leap year";
+			}else{
+				document.getElementById('result').innerHTML = x + " is not a leap year";
+			}
+			
+		}
+	</script>
+
+</body>
+</html>

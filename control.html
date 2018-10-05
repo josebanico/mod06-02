@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Control Structures</title>
+</head>
+<body>
+	
+	
+	<input type="number" name="num" id="num">
+	<button onclick="oddEven()">Button</button>
+	<span id="result"></span>
+	<script type="text/javascript">
+		const oddEven = () =>{
+			let numToTest = Number(document.getElementById('num').value);
+			let result = numToTest % 2;
+			if (result == 0){
+				document.getElementById('result').innerHTML = numToTest + "is even";
+			}else {
+				document.getElementById('result').innerHTML = numToTest + "is odd";
+			}
+		}
+	</script>
+	
+
+</body>
+</html>
